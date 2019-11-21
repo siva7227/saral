@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<%=  image_tag("logs/3.png", width: '120px')%>
+						</div>
+							<ul class="nav navbar-nav">
+							</ul><br>
+							<ul class="nav navbar-nav navbar-right" style="margin-right: 21px">
+								<strong><%= link_to "login",new_user_session_path,class: 'btn btn-primary'%></strong>
+                <strong><%= link_to "logout", destroy_user_session_path,method: :delete,class: 'btn btn-primary'%></strong>
+								<strong><%= link_to "register", new_user_registration_path, class: 'btn btn-primary'%></strong>
+							</ul>
+					</div>
+				</nav
+		  <title></title>
+	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= csrf_meta_tags %>
+
+	</head>
+<body>
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<%= yield %>
+<%#= wicked_pdf_stylesheet_link_tag "pdf" -%>
+<%#= wicked_pdf_stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%#= wicked_pdf_javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>
+
+
+

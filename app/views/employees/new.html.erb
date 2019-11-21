@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= bootstrap_form_for(@employee) do |form| %>
+			<p><%= form.text_field :name %></p>
+			<p><%= form.text_field :city %></p>
+			<p><%= form.text_field :mobile_number%></p>
+			<p><%= form.text_field :country %></p>
+			<p><%= form.date_field :date_of_joining, class: 'date-field' %></p>
+			<p><%= form.date_field :date_of_birth %></p>
+			<p><%= form.text_field :job_tittle %></p>
+
+			<%= form.submit "save", class: 'btn btn-primary' %>
+			<%= form.submit "cancel", class: 'btn btn-primary' %>
+		<% end %>
+	</div>
+</div>
+
+
+

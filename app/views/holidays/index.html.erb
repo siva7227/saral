@@ -1,0 +1,22 @@
+	<div class="col-md-10 ">
+	<div class="row">
+		<% @holidays.each do |holiday| %>
+			<div class="col-md-6 ">
+			  <div class="panel panel-default">
+			  	<ul>
+			  		<p>name: <%=holiday.employee.try(:name) %></p><br>
+						<p><%=holiday.start_date%></p><br>
+						<p><%=holiday.end_date%></p><br>
+						<p><%=holiday.leave_type%></p><br>
+					</ul>
+					<%= link_to 'Destroy', holiday_path(holiday), :method => :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+				  <%= link_to 'Edit', edit_holiday_path(holiday) ,class: "btn btn-primary"%>
+				  <%= link_to "Download Payslip PDF", generate_payslip_employee_path(holiday.employee, format: 'pdf') if holiday.employee %>
+
+				</div>
+			</div>
+		<%end%>
+	</div>
+</div>
+
+ <%#= link_to "Download PDF", generate_payslip_employee_path(employee, format: 'pdf') %>

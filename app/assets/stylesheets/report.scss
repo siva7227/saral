@@ -1,0 +1,12 @@
+tr {
+	border-bottom :solid;
+	border-width :300px;
+}
+table, tr, td, th, tbody, thead, tfoot {
+		 	page-break-inside: 	avoid !important
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}

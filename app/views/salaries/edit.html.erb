@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= bootstrap_form_for(@salary) do |form| %>
+      <p><%= form.select :employee_id, options_for_select(Employee.all.collect{ |e| [e.name, e.id] }) %></p>
+
+      <p><%= form.text_field :basic,placeholder: "0.0" %></p>
+      <p><%= form.text_field :da,placeholder: "0.0" %></p>
+      <p><%= form.text_field :hra,placeholder: "0.0" %></p>
+      <p><%= form.text_field :conveyance,placeholder: "0.0" %></p>
+      <p><%= form.text_field :special_allowences,placeholder: "0.0" %></p>
+      <p><%= form.text_field :bonus,placeholder: "0.0" %></p>
+
+      <%= form.submit "save", class: 'btn btn-primary' %>
+      <%= form.submit "cancel", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<h4 style="color:blue">welcome to employees details </h4><br> 
+<div class="col-md-11 ">
+	<div class="row">
+		<% @employees.each do |employee| %>
+			<div class="col-md-6 ">
+			  	<div class="panel panel-default">
+			  	<ul>
+						<p>name: <%=employee.name%></p><br>
+						<p>city: <%=employee.city%></p><br>	
+						<p>job_tittle: <%=employee.job_tittle%></p><br>
+						<p>date_of_joining:<%=employee.date_of_joining%></p><br>	
+						<p>date_of_birth: <%=employee.date_of_birth%></p><br>
+						<p>mobile_number: <%=employee.mobile_number%></p><br>
+						<p>country: <%=employee.country%></p><br>
+					</ul>
+
+					<%= link_to 'Destroy', employee, :method => :delete, class: 'btn btn-sm btn-danger closeModal', data: {confirm: "Are you sure?"} %>
+				    <%= link_to 'Edit', edit_employee_path(employee) ,class: "btn btn-primary"%>
+				</div>
+			</div>
+		<%end%>
+		<div class="container-fluid">
+			<%= link_to 'salary ', new_salary_path,class: 'btn btn-primary'%><br><br>
+		</div>
+	</div>
+</div>
+
+    

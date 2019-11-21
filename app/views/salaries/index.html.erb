@@ -1,0 +1,24 @@
+<div class="col-md-10">
+	<div class="row">
+		<% @salaries.each do |salary| %>
+			<div class="col-md-6 ">
+			  <div class="panel panel-default">
+			  	<ul>
+			  		<p>name: <%= salary.employee.try(:name) %></p><br>
+						<p>basic :<%= salary.basic%></p><br>
+						<p>hra :<%= salary.hra%></p><br>
+						<p>da: <%= salary.da%></p><br>
+						<p>conveyance: <%= salary.conveyance%></p><br>
+						<p>special_allowences: <%= salary.special_allowences%></p><br>	
+						<p>bonus: <%= salary.bonus%></p><br>
+					</ul>
+					<%= link_to 'Destroy', salary_path(salary), :method => :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+				  <%= link_to 'Edit', edit_salary_path(salary) ,class: "btn btn-primary"%>
+				</div>
+			</div>
+		<%end%>
+	</div>
+	  <%= link_to 'leave ',	new_holiday_path,class: 'btn btn-primary' %><br><br>
+</div>
+
+

@@ -1,0 +1,25 @@
+<h1 style="color:blue">welcome to employees salary details </h1>
+<div class="col-md-10 ">
+	<div class="row">
+		<% @salaries.each do |salary| %>
+			<div class="col-md-6 ">
+			  <div class="panel panel-default">
+			  	<ul>
+			  		<%=salary.employee.name %><br>
+						<%=salary.basic%><br>
+						<%=salary.hra%><br>
+						<%=salary.da%><br>
+						<%=salary.conveyance%><br>
+						<%=salary.special_allowences%><br>	
+						<%=salary.bonus%><br>
+					</ul>
+					<%= link_to 'Destroy', salary_path(salary), :method => :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+				  <%= link_to 'Edit', edit_salary_path(salary) ,class: "btn btn-primary"%>
+				</div>
+			</div>
+		<%end%>
+	</div>
+</div>
+
+
+

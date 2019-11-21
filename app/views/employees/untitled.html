@@ -1,0 +1,70 @@
+<html>
+	<head>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+
+ </head><br><br>
+
+ 		<center>
+ 			<strong><p style="font-size: 130px">Relyon</p></strong><br>
+ 			<p style="font-size: 120px">bangalore</p>
+ 			<p style="font-size: 120px">payslip for the month of october</p>
+ 		</center>
+	<body> 
+		<div class="row">
+
+	    <table style="width: 80%; height: 30%; margin-left:20%;">
+	    	<tr>
+	    		<td style="font-size: 80px;">name : <%= @employee.name %></td>
+	    		<td style="font-size: 80px;">basic : <%= @employee.date_of_joining %></td>
+	    	</tr>
+	    	<tr>
+	    		<td height="10" style="font-size: 90px;">city : <%= @employee.city %></td>
+	    		<td style="font-size: 80px;">Hra : <%= @employee.date_of_birth %></td>
+	    	</tr>
+	    	<tr>
+	    		<td style="font-size: 80px;">job_tittle : <%= @employee.job_tittle %></td>
+	    		<td style="font-size: 80px">Da : <%= @employee.salary %></td>
+	    	</tr>
+	    </table>
+			<table class="table table-bordered" style="width: 80%; height: 30%; margin-left:10%;">
+			  <thead style="font-size: 100px">
+			    <tr size="7">
+			      <th scope="col">Earnings</th>
+			      <th scope="col">Amount</th>
+			      <th scope="col">Deductions</th>
+			      <th scope="col">Amount</th>
+			    </tr>
+			  </thead>
+			    <tbody style="font-size: 100px">
+			      <tr>
+			        <td> * Basic </td>
+			        <td> $ <%= @employee.salaries.first.hra %> </td>
+			        <td> conveyance </td>
+			        <td> $ <%= @employee.salaries.first.bonus %> </td>
+			      </tr>
+			      <tr>
+			        <td> * HRA</td>
+			        <td>$ <%= (@employee.salaries.first.hra) + (@employee.salaries.first.basic)%>   </td>
+			        <td> special_allowences  </td>
+			        <td>$ <%= (@employee.salaries.first.special_allowences) + (@employee.salaries.first.bonus)%></td>
+			      </tr>
+			      <tr>
+			        <td colspan="1.5">* Total earnings </td>
+			        <td>$ <%= (@employee.salaries.first.special_allowences) + (@employee.salaries.first.bonus)%>   </td>
+			        <td colspan="1.5">* Total deductions</td>
+			        <td>$ <%= (@employee.salaries.first.special_allowences) + (@employee.salaries.first.conveyance)%>   </td>
+
+			      </tr>
+			      <tr>
+			        <td colspan="3">* Net salary<br>	</td>
+			        <td>$ <%= (@employee.salaries.first.basic) + (@employee.salaries.first.hra)+(@employee.salaries.first.da) %>   </td>
+			      </tr>
+			    </tbody>
+			</table>
+		</div>
+	</body>
+</html>
